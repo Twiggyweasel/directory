@@ -1,0 +1,9 @@
+<%= form_for @client do |f| %>
+       <%= f.label 'Client Name' %>
+       <%= f.text_field :name, class: 'form-control' %>
+       <br />
+       <%= f.submit(@client.new_record? ? "Create New Client" : "Edit Client", class: 'btn btn-success form-control') %>
+       <br />
+       <br />
+       <%= link_to "Cancel", :back, class: 'btn btn-danger form-control' %> 
+   <% end %>

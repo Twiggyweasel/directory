@@ -1,0 +1,33 @@
+<%= form_for @phone do |f| %>
+    <hr />
+    <%= f.select :department_id, @dept.collect{ |d| [ d.name, d.id] }, class: 'form-control' %>
+    <br />
+    <br />
+    <%= f.label "Phone Number Type" %>
+    <br />
+    <%= f.select(:number_type) do %>
+      <% [['TNT', "TNT"], ['Phone Number', "Phone Number"]].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    <br />
+    <br />
+    <%= f.label :language %>
+    <br />
+    <%= f.select(:language) do %>
+      <% [['English', "English"], ['Spanish', "Spanish"]].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    <br />
+    <br />
+    <%= f.label "Phone Number" %>
+    <br />
+    <%= f.text_field :number, class: 'form-control', placeholder: '"xxx-xxx-xxxx"' %> 
+    <br />
+    <%= f.label :comments %>
+    <%= f.text_area :comments, class: 'form-control' %>
+    <br />
+    <%= f.submit "create New Number", class: 'btn btn-success' %>
+    
+<% end %>

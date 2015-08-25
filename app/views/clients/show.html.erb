@@ -1,0 +1,17 @@
+<div class='col-md-4 col-md-offset-4 text-center'>
+    <h2><%= @client.name %></h2>
+</div>
+<br />
+<br />
+<br />
+<br />
+<%= link_to "All Clients", :root, class: "btn btn-default" %> 
+<br />
+<br />
+ <% @client.departments.each do |dept| %>
+<div class='col-md-3 text-center' onclick="location.href='/departments/<%= dept.id %>';">
+   <div class='well hover'>
+        <h4><%= dept.name %></h4>
+    </div>
+</div>
+<% end %>

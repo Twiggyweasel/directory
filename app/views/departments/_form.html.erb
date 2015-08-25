@@ -1,0 +1,15 @@
+<%= form_for @dept do |f| %>
+    <%= f.label "Department Name" %>
+    <%= f.text_field :name, class: "form-control" %>
+    <br />
+    <%= f.label "Client" %>
+    <br/>
+    <%= f.select :client_id, @client.collect{ |c| [c.name, c.id] }, class: 'form-control' %> 
+    <br />
+    <br />
+    <%= f.label :address %>
+    <%= f.text_area :address, class: 'form-control' %>
+    <br />
+  
+    <%= f.submit(@dept.new_record? ? "Create New Department" : "Edit Department", class: "btn btn-success form-control") %>
+<% end %>

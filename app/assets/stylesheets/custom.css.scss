@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.hover:hover {
+    transform: scale(1.10);
+}
+
+body {
+    padding-top: 75px;
+}
+
+.client {
+    background: #f8f8f8;
+}

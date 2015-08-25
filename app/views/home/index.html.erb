@@ -1,0 +1,25 @@
+<div class='alert alert-warning'>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+    <h3>Address and Phone Directory</h3>
+    <h4>Welcome to the new address and phone directory you can signin to create favorite listings or just start browsing the numbers below.</h4>
+    <button class='btn btn-primary'>Sign In</button>
+</div>
+<div class='row'>
+    <div class='col-md-8 col-md-offset-2'>
+        <div class='well text-center'>
+            <h2>All Clients</h2>
+        </div>
+    </div>
+</div>
+<div class='row text-center'>
+    <% @clients.each do |client| %>
+    <div class='col-md-3 hover' onclick="location.href='/clients/<%= client.id %>';">
+        <div class='well'>
+            <h4><%= client.name %></h4>
+        </div>
+    </div>
+    <% end %>
+</div>
+

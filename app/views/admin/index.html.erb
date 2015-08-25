@@ -1,0 +1,48 @@
+<div class='row'>
+    <div class='col-lg-8 col-lg-offset-2 text-center'>
+        <h2>Site Admin</h2>
+    </div>
+</div>
+
+<table class='table table-bordered'>
+    <tbody>
+        <% @client.each do |c|%>
+        <tr>
+            <td colspan="6" class='text-center client'><%= c.name %></td>
+        </tr>
+        
+        <tr>
+            <td>Dept id</td>
+            <td colspan="2">Dept name</td>
+            <td colspan="2">Dept Address</td>
+            <td>Number of Listings</td>
+        </tr>
+        <% c.departments.each do |d| %>
+        <tr>
+            <td><%= d.id %></td>
+            <td colspan="2"><%= d.name %></td>
+            <td colspan="2"><%= d.address %></td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>Number Id</td>
+            <td>Type of Number</td>
+            <td>Langauge</td>
+            <td>Number</td>
+            <td>Comments</td>
+            <td>Actions</td>
+        </tr>
+        <% d.phones.each do |p| %>
+        <tr>
+            <td><%= p.id %></td>
+            <td><%= p.number_type %></td>
+            <td><%= p.language %></td>
+            <td><%= p.number %></td>
+            <td><%= p.comments %></td>
+            <td><%= link_to "Edit", phones_path(p.id), class: 'btn btn-primary' %> / <%= link_to "Delete", admin_path, class: 'btn btn-danger' %></td>
+        </tr>
+        <% end %>
+        <% end %>
+        <% end %>
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+<div class='col-md-1 col-md-offset-4 col-sm-1 col-sm-offset-4'>
+    <%= link_to "All Clients", root_path, class: 'btn btn-default' %>
+</div>
+<div class='col-md-1 col-sm-1 col-sm-offset-1'>
+    <%= link_to "All Departments", :back, class: 'btn btn-default' %>
+</div>
+<br />
+<br />
+<br />
+<div class='col-md-6 col-md-offset-3'>
+    <div class='well'>
+        <h2 class='text-center'><%= @dept.name %></h2>
+        <div class='text-center'>
+            <h3><%= @dept.address %></h3>
+        </div>
+    </div>
+        <% @dept.phones.each do |p| %>
+        <div class='well text-center'>
+            <label><%= p.number_type %></label>
+            <h5><%= p.language %></h5>
+            <button class='btn' id="demo<%= p.id %>" onclick="copyToClipboard(document.getElementById('demo<%= p.id%>').innerHTML)"><%= p.number %></button>
+            <br />
+            <br />
+            <label>Comments:</label>
+            <p><%= p.comments %></p>
+            
+        </div>
+            <% end %>
+    </div>
+</div>
+
+
+<script>
+  function copyToClipboard(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+  }
+</script>
