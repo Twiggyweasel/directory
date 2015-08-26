@@ -8,11 +8,12 @@
 </div>
 <div class='row'>
     <div class='col-md-8 col-md-offset-2'>
-        <div class='well text-center'>
+        <div class='text-center'>
             <h2>All Clients</h2>
         </div>
     </div>
 </div>
+<br />
 <div class='row text-center'>
     <% @clients.each do |client| %>
     <div class='col-md-3 hover' onclick="location.href='/clients/<%= client.id %>';">

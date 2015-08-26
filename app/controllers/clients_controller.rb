@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   def index
-    @client = Client.all
+    @client = Client.order(name: :ASC)
   end
   
   def show
