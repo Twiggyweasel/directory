@@ -16,8 +16,8 @@
 <br />
 <div class='row text-center'>
     <% @clients.each do |client| %>
-    <div class='col-md-3 hover' onclick="location.href='/clients/<%= client.id %>';">
-        <div class='well'>
+    <div class='col-md-3'>
+        <div class='well hover' onclick="location.href='/clients/<%= client.id %>';">
             <h4><%= client.name %></h4>
         </div>
     </div>
