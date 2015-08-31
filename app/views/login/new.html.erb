@@ -1,0 +1,20 @@
+<div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+        <div class='well'>
+            <h2>Login</h2>
+            <hr>
+             <%= form_tag '/login' do %>
+            <label>SSO</label>
+            <br>
+            <%= text_field_tag :sso, nil, class: 'form-control' %>
+        <br>
+        <%= label_tag :password %>
+        <br>
+        
+        <%= password_field_tag :password, nil, class: 'form-control' %>
+        <br>
+        <%= submit_tag 'Login', class: 'btn btn-success btn-block' %>
+        <% end %>
+        </div>
+    </div>
+</div>

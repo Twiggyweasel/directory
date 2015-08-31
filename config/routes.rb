@@ -2,10 +2,19 @@ Rails.application.routes.draw do
   root 'home#index'
   
   resources :clients
-  resources :departments
+  resources :departments do
+    member do
+      post 'favorite'
+      delete 'fav'
+    end
+  end
   resources :phones
   
   get "/admin", to: "admin#index"
+  get "/favorites", to: "users#fav"
+  get '/login', to: "login#new"
+  post '/login', to: "login#create"
+  get '/logout', to: "login#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

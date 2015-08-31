@@ -13,3 +13,10 @@ body {
 .client {
     background: #f8f8f8;
 }
+
+#favorite {
+    position: absolute;
+    text-decoration: none;
+    float: right;
+    padding-top: 3px;
+}

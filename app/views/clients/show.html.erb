@@ -9,9 +9,10 @@
 <br />
 <br />
  <% @client.departments.each do |dept| %>
-<div class='col-md-3 text-center' onclick="location.href='/departments/<%= dept.id %>';">
-   <div class='well hover'>
+<div class='col-md-3 text-center'>
+   <div class='well hover' onclick="location.href='/departments/<%= dept.id %>';">
         <h4><%= dept.name %></h4>
     </div>
 </div>
 <% end %>
+

@@ -1,0 +1,56 @@
+<div class="row">
+<h1 class='text-center'>Your Favorites</h1>
+</div>
+
+<% if !logged_in? %>
+
+<div class='alert alert-danger'>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+    <h3>You must be signed in to do that!</h3>
+    <h4>Please signin to begin adding favorites, you can continue browsing listings <%= link_to "here", root_path %></h4>
+</div>
+<% else %>
+<% if @user.favorites.empty? %>
+<div class='row'>
+    <div class='col-md-10 col-md-offset-1 well danger'>
+        You haven't created any favorites yet, <%= link_to "click here", root_path %> to start browsing listings
+    </div>
+</div>
+<% else %>
+<div class='row'>
+    <% @user.favorites.each do |f| %>
+    <% if f.fav == true %>
+    <div class='col-md-4'>
+        <div class='well text-center'>
+            <div class='pull-right'>
+        <%= link_to fav_department_path(@dept, id: f.id), method: :delete do %>
+    				<i class="glyphicon glyphicon-remove"></i>
+    			<% end %>
+    </div>
+            <%= f.department.name %>(<%= f.department.client.name %>)
+            <% f.department.phones.each do |phone| %>
+                <br>
+                <br>
+                <%= phone.number_type %>
+                <br>
+                <br>
+                <%= phone.language %>
+                <br>
+                <br>
+                <button class='btn' id="demo<%= phone.id %>" onclick="copyToClipboard(document.getElementById('demo<%= phone.id%>').innerHTML)"><%= phone.number %></button>
+                <hr>
+            <% end %>
+        </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>
+<% end %>
+<% end %>
+<script>
+  function copyToClipboard(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+  }
+</script>
