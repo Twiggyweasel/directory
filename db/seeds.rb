@@ -50,3 +50,5 @@ Phone.create! id: 21, number_type: "TNT", language: "English", number: "*xxxx", 
 Phone.create! id: 22, number_type: "TNT", language: "English", number: "*xxxx", comments: "N/A", department_id: "10", client_id: "4"
 Phone.create! id: 23, number_type: "TNT", language: "English", number: "*xxxx", comments: "N/A", department_id: "11", client_id: "5"
 Phone.create! id: 24, number_type: "TNT", language: "English", number: "*xxxx", comments: "N/A", department_id: "12", client_id: "6"
+
+User.create! id: 1, name: "Richard", sso: "222035196", password: "test"

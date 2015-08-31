@@ -11,6 +11,12 @@
  <% @client.departments.each do |dept| %>
 <div class='col-md-3 text-center'>
    <div class='well hover' onclick="location.href='/departments/<%= dept.id %>';">
+       <div class='pull-right'>
+        <%= link_to favorite_department_path(@dept, fav: true, id: dept.id), method: :post do %>
+    				<i class="glyphicon glyphicon-star" id='test'></i>
+    			<% end %>
+    </div>
+       
         <h4><%= dept.name %></h4>
     </div>
 </div>
