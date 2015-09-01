@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   
   resources :clients
+  resources :users
   resources :departments do
     member do
       post 'favorite'

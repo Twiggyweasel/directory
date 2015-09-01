@@ -1,5 +1,6 @@
 class DepartmentsController < ApplicationController
-   before_action :set_dept, only: [:edit, :update, :show, :favorite]
+  before_action :set_dept, only: [:edit, :update, :show, :favorite]
+  before_action :require_user, only: [:favorite]
   
   def show
     #@client = Client.find(params[:client_id])

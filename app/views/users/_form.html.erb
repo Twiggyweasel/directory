@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :sso %>
+    <%= f.text_field :sso, class: 'form-control' %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+    <br />
+    <%= f.submit 'Create Acccont', class: 'btn btn-success btn-block' %>
+    
+    <h4>Already have an account? <%= link_to "Login Here!", login_path %></h4>
+<% end %>
